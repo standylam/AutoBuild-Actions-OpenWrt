@@ -50,6 +50,10 @@ Firmware_Diy() {
 	# ${FEEDS_LUCI}			OpenWrt 源码目录下的 package/feeds/luci 目录
 	# ${FEEDS_PKG}			OpenWrt 源码目录下的 package/feeds/packages 目录
 	# ${BASE_FILES}			OpenWrt 源码目录下的 package/base-files/files 目录
+	AddPackage git passwall-depends openwrt-passwall xiaorouji packages
+	AddPackage git passwall-luci openwrt-passwall xiaorouji luci
+	Copy ${CustomFiles}/${TARGET_PROFILE}_system ${BASE_FILES}/etc/config system
+
 
 	:
 }
